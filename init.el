@@ -17,3 +17,9 @@
 
 ;; line numbers on the side
 (global-linum-mode)
+
+;;disable arrow keys
+(global-unset-key (kbd "<left>"))
+(global-unset-key (kbd "<right>"))
+(global-unset-key (kbd "<up>"))
+(global-unset-key (kbd "<down>"))

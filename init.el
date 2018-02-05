@@ -1,3 +1,7 @@
+(add-to-list 'load-path "~/.emacs.d/elisp/")
+(require 'column-marker)
+(require 'fill-column-indicator)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -17,9 +21,12 @@
 
 ;; line numbers on the side
 (global-linum-mode)
+(setq column-number-mode t)
 
 ;;disable arrow keys
 (global-unset-key (kbd "<left>"))
 (global-unset-key (kbd "<right>"))
 (global-unset-key (kbd "<up>"))
 (global-unset-key (kbd "<down>"))
+
+(add-hook 'prog-mode-hook 'fci-mode)                                  

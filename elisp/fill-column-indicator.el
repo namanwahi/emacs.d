@@ -200,7 +200,7 @@
 
 ;; We should be using :validate instead of :match, but that seems not to
 ;; work with defcustom widgets.
-(defcustom fci-rule-column nil
+(defcustom fci-rule-column 80
   "Controls where fci-mode displays a vertical line (rule).
 
 If nil, the rule is drawn at the fill column.  Otherwise, it is

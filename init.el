@@ -1,5 +1,4 @@
 (add-to-list 'load-path "~/.emacs.d/elisp/")
-(require 'column-marker)
 (require 'fill-column-indicator)
 
 (custom-set-variables

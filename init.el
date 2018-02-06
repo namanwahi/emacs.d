@@ -18,7 +18,7 @@
  ;; If there is more than one, they won't work right.
  )
 
-;; line numbers on the side
+;; line numbers on the sie
 (global-linum-mode)
 (setq column-number-mode t)
 
@@ -28,4 +28,10 @@
 (global-unset-key (kbd "<up>"))
 (global-unset-key (kbd "<down>"))
 
+;;programming column indicator
 (add-hook 'prog-mode-hook 'fci-mode)                                  
+
+;;melpa package manager
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa-stable" . "http://stable.melpa.org/packages/") t)

@@ -295,7 +295,7 @@ Default is t."
          (set symbol value))
   :group 'sr-speedbar)
 
-(defcustom sr-speedbar-right-side t
+(defcustom sr-speedbar-right-side nil
   "Show the speedbar to the right side of the current window.
 If nil, the speedbar will appear on the left.
 Default is t."
@@ -470,7 +470,7 @@ of a speedbar-window.  It will be created if necessary."
 
 (defun sr-speedbar-refresh-turn-off ()
   "Turn off refresh content automatically."
-  (interactive)
+   (interactive)
   (setq sr-speedbar-auto-refresh nil)
   (sr-speedbar-handle-auto-refresh sr-speedbar-auto-refresh t))
 

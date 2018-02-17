@@ -419,7 +419,7 @@ U+E000-U+F8FF, inclusive)."
     (and (fci-posint-p c)
          ;; MAX_CHAR in v22 is (0x1f << 14).  We don't worry about
          ;; generic chars.
-         (< c 507904))))
+n         (< c 507904))))
 
 ;;; ---------------------------------------------------------------------
 ;;; Mode Definition

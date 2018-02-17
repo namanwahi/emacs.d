@@ -1,5 +1,6 @@
 (add-to-list 'load-path "~/.emacs.d/elisp/")
 (require 'fill-column-indicator)
+(require 'fixme-mode)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -29,13 +30,17 @@
 (global-unset-key (kbd "<down>"))
 
 ;;programming column indicator
-(add-hook 'prog-mode-hook 'fci-mode)                                  
+(add-hook 'prog-mode-hook 'fci-mode)
+(add-hook 'prog-mode-hook 'fixme-mode)
 
 ;;melpa package manager
 (require 'package)
 (add-to-list 'package-archives
-             '("melpa-stable" . "http://stable.melpa.org/packages/") t)
+             '("melpa-stable" . "http://stnable.melpa.org/packages/") t)
 
+
+;;;;;;;;;;;;;;;;;;; MAGIT STUFF ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (global-set-key (kbd "C-x g") 'magit-status)
 
 (global-set-key (kbd "C-x M-g") 'magit-dispatch-popup)
+

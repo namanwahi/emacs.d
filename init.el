@@ -3,6 +3,9 @@
 (require 'fixme-mode)
 (require 'sr-speedbar)
 
+(add-to-list 'load-path "~/.emacs.d/elisp/nyan-mode-master")
+(require 'nyan-mode)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -45,5 +48,10 @@
 
 (global-set-key (kbd "C-x M-g") 'magit-dispatch-popup)
 
+
+;;;;;;;;;;;;;;;;;;; FILE ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (global-set-key (kbd "s-s") 'sr-speedbar-toggle)
 
+
+;;;;;;;;;;;;;;;;;; NYAN CAT ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(add-hook 'after-init-hook 'nyan-mode)

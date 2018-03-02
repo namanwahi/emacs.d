@@ -274,12 +274,12 @@
   "Same frame speedbar."
   :group 'speedbar)
 
-(defcustom sr-speedbar-default-width 40
+(defcustom sr-speedbar-default-width 25
   "Initial width of `sr-speedbar-window' under window system."
   :type 'integer
   :group 'sr-speedbar)
 
-(defcustom sr-speedbar-max-width 50
+(defcustom sr-speedbar-max-width 35
   "The max width limit that window allowed.
 Default, if hide `sr-speedbar' window will remember
 window width, except the window width larger than

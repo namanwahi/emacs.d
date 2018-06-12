@@ -214,7 +214,7 @@ function `fci-mode' is run."
                  (integer :tag "Use a custom column"
                           :match (lambda (w val) (fci-posint-p val)))))
 
-(defcustom fci-rule-color "#cccccc"
+(defcustom fci-rule-color "#ffffff"
   "Color used to draw the fill-column rule.
 
 Changes to this variable do not take effect until the mode

@@ -1,6 +1,4 @@
 (add-to-list 'load-path "~/.emacs.d/elisp/")
-(require 'fill-column-indicator)
-(require 'fixme-mode)
 (require 'sr-speedbar)
 
 (add-to-list 'load-path "~/.emacs.d/elisp/nyan-mode-master")
@@ -36,7 +34,7 @@
 (global-unset-key (kbd "<down>"))
 
 ;;programming column indicator
-(add-hook 'prog-mode-hook 'fci-mode)
+(require 'fixme-mode)
 (add-hook 'prog-mode-hook 'fixme-mode)
 
 ;;melpa package manager
@@ -61,7 +59,39 @@
 (add-hook 'after-init-hook 'global-company-mode)
 
 
-;;;;;;;;;;;;;;;;;;; THEME ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;; THEME ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 (load-theme 'zenburn t)
- 
+
+
+;;;;;;;;;;;;;;;;;;; spelling grammar ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(add-hook 'org-mode-hook (lambda ()
+   (progn
+     ;; Snipped
+     (auto-fill-mode t)
+
+     ;; Spelling
+     (flyspell-mode t)
+
+     ;; Grammar
+     (require 'langtool)
+     (setq langtool-language-tool-jar "/path/to/LanguageTool.jar"))))
+
+
+;;;;;;;;;;;;;;;;;;;;; COLUMN ENFORCE MODE ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(require 'column-enforce-mode)
+(add-hook 'prog-mode-hook 'column-enforce-mode)
+
+;;;;;;;;;;;;;;;;;;;;PARENT SHIT ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(require 'rainbow-delimiters)
+(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+(add-hook 'prog-mode-hook 'electric-pair-mode)
+(add-hook 'prog-mode-hook 'show-paren-mode)
+
+;;;;;;;;;;;;;;;;;;;; JS INDENT ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(setq js-indent-level 2)
+
+
+(autoload 'php-mode "php-mode" "Major mode for editing PHP code." t)
+(add-to-list 'auto-mode-alist '("\\.php$" . php-mode))
+(add-to-list 'auto-mode-alist '("\\.inc$" . php-mode))
